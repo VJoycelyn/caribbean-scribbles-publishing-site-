@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Caribbean Scribbles Publishing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Caribbean Scribbles Publishing is a digital-first Caribbean publishing space for children’s books, stories, and creative projects."
+  />
+
+  <style>
+    :root {
+      --primary: #007b83;      /* teal / sea */
+      --primary-dark: #005962;
+      --accent: #ffc857;       /* warm sun */
+      --bg: #f5f7fb;
+      --text: #222;
+      --muted: #6b7280;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+      --shadow-soft: 0 14px 30px rgba(15, 23, 42, 0.12);
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --transition: 0.25s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Layout */
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* NAVBAR */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(12px);
+      background: rgba(245, 247, 251, 0.9);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 0;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      background: radial-gradient(circle at 10% 0%, #00b4d8, #0077b6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      box-shadow: 0 10px 25px rgba(0, 119, 182, 0.35);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .brand-subtitle {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 0.2rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.45rem 1rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #fff;
+    }
+
+    .nav-cta span {
+      font-size: 0.95rem;
+    }
+
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 1.4rem;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 3.5rem 0 3rem;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: 2.75rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.8rem;
+      border-radius: var(--radius-pill);
+      background: rgba(56, 189, 248, 0.12);
+      color: #0369a1;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      margin-bottom: 1rem;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: linear-gradient(120deg, var(--primary), var(--accent));
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw + 1.3rem, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(120deg, var(--primary), #00c896, var(--accent));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-tagline {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 32rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .badge {
+      font-size: 0.78rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-pill);
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+      color: #4b5563;
+      background: rgba(255, 255, 255, 0.85);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .btn {
+      border-radius: var(--radius-pill);
+      padding: 0.7rem 1.3rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition), border-color var(--transition);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #00b4d8);
+      color: #f9fafb;
+      box-shadow: 0 18px 35px rgba(15, 23, 42, 0.32);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 40px rgba(15, 23, 42, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      color: var(--primary-dark);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      background: #ffffff;
+      box-shadow: 0 12px 25px rgba(15, 23, 42, 0.15);
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .hero-highlight {
+      width: 100%;
+      background: radial-gradient(circle at top, #e0f2fe, #0369a1);
+      border-radius: 28px;
+      padding: 1.4rem 1.4rem 1.1rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      color: #e5f4ff;
+      isolation: isolate;
+    }
+
+    .hero-highlight::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.26;
+      background-image: radial-gradient(circle at 0 0, rgba(255, 200, 87, 0.9), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(34, 211, 238, 0.8), transparent 50%),
+        radial-gradient(circle at 50% 100%, rgba(45, 212, 191, 0.9), transparent 55%);
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .hero-highlight-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    .hero-highlight-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(241, 245, 249, 0.9);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-highlight-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-highlight-text {
+      font-size: 0.86rem;
+      color: rgba(241, 245, 249, 0.9);
+    }
+
+    .hero-highlight-books {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.4rem;
+    }
+
+    .book-spine {
+      width: 56px;
+      border-radius: 14px;
+      background: linear-gradient(160deg, #f97316, #facc15);
+      padding: 0.65rem 0.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 0.58rem;
+      color: #111827;
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.35);
+    }
+
+    .book-spine:nth-child(2) {
+      background: linear-gradient(150deg, #22c55e, #a3e635);
+      transform: translateY(6px);
+    }
+
+    .book-spine:nth-child(3) {
+      background: linear-gradient(145deg, #0ea5e9, #38bdf8);
+      transform: translateY(12px);
+    }
+
+    .book-tag {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .book-title {
+      font-weight: 600;
+    }
+
+    .book-meta {
+      opacity: 0.85;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 4rem 0;
+    }
+
+    section:nth-of-type(odd) {
+      background: #ffffff;
+    }
+
+    section:nth-of-type(even) {
+      background: var(--bg);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2.4rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 32rem;
+      margin: 0 auto;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    }
+
+    .about-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1.6rem 1.7rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.05);
+    }
+
+    .about-card h3 {
+      margin-bottom: 0.6rem;
+      font-size: 1.1rem;
+    }
+
+    .about-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .about-list {
+      list-style: none;
+      margin-top: 0.4rem;
+    }
+
+    .about-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: #4b5563;
+      margin-bottom: 0.35rem;
+    }
+
+    .about-bullet {
+      margin-top: 0.25rem;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--primary);
+    }
+
+    .about-pill-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .about-pill {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    /* SERVICES */
+    .card-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 1.4rem 1.4rem 1.3rem;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .card-tag {
+      display: inline-flex;
+      font-size: 0.75rem;
+      padding: 0.22rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background: rgba(59, 130, 246, 0.06);
+      color: #2563eb;
+      align-self: flex-start;
+      margin-bottom: 0.2rem;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+    }
+
+    .card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .card ul {
+      margin-top: 0.4rem;
+      padding-left: 0.9rem;
+      font-size: 0.86rem;
+      color: #4b5563;
+    }
+
+    .card ul li {
+      margin-bottom: 0.25rem;
+    }
+
+    /* SHOP / E-COMMERCE */
+    .product-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .product-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 1.3rem 1.3rem 1.2rem;
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.07);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .product-cover {
+      border-radius: 14px;
+      height: 160px;
+      background: linear-gradient(140deg, #f97316, #facc15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #111827;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.6rem;
+      text-align: center;
+    }
+
+    .product-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .product-meta {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .product-price {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .product-actions {
+      margin-top: 0.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .product-actions .btn {
+      font-size: 0.82rem;
+      padding: 0.55rem 1rem;
+    }
+
+    .product-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    /* BOOKS */
+    .books-grid {
+      display: grid;
+      gap: 1.3rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .book-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+    }
+
+    .book-cover {
+      border-radius: 14px;
+      height: 170px;
+      background: linear-gradient(145deg, #f97316, #facc15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #111827;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.7rem;
+      text-align: center;
+    }
+
+    .book-meta-top {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+    }
+
+    .book-title-main {
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+
+    .book-sub {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .book-footer {
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+
+    .book-tagline {
+      color: #4b5563;
+    }
+
+    .book-link {
+      font-weight: 600;
+      color: var(--primary-dark);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* FOR AUTHORS (PROCESS) */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .step-card {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px dashed rgba(148, 163, 184, 0.9);
+      padding: 1rem;
+      font-size: 0.88rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .step-number {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, var(--accent), var(--primary));
+      color: #111827;
+      font-size: 0.78rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.15rem;
+    }
+
+    .step-title {
+      font-weight: 600;
+    }
+
+    .step-text {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    /* TESTIMONIALS / CTA */
+    .testimonials {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1.6rem;
+      align-items: center;
+    }
+
+    .quote-card {
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      padding: 1.4rem 1.5rem;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.12);
+      position: relative;
+    }
+
+    .quote-mark {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      font-size: 2.3rem;
+      color: rgba(148, 163, 184, 0.35);
+    }
+
+    .quote-text {
+      font-size: 0.92rem;
+      color: #374151;
+      margin-bottom: 0.8rem;
+    }
+
+    .quote-author {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .quote-role {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .cta-panel {
+      background: linear-gradient(135deg, var(--primary), #00b4d8);
+      border-radius: 22px;
+      padding: 1.4rem 1.5rem;
+      color: #f9fafb;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .cta-panel h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .cta-panel p {
+      font-size: 0.9rem;
+      margin-bottom: 0.9rem;
+      color: #e0f2fe;
+    }
+
+    .cta-panel form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .cta-panel input[type="email"] {
+      flex: 1;
+      min-width: 180px;
+      border-radius: var(--radius-pill);
+      border: none;
+      padding: 0.6rem 0.9rem;
+      font-size: 0.88rem;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2rem;
+    }
+
+    .contact-form {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 1.5rem 1.6rem;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    .contact-form h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-form p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .field-group {
+      margin-bottom: 0.8rem;
+    }
+
+    .field-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      display: block;
+    }
+
+    .field-helper {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      padding: 0.55rem 0.7rem;
+      font-size: 0.9rem;
+      font-family: inherit;
+      resize: vertical;
+      min-height: 40px;
+    }
+
+    textarea {
+      min-height: 110px;
+    }
+
+    .contact-meta {
+      font-size: 0.88rem;
+      color: #4b5563;
+    }
+
+    .contact-meta strong {
+      display: inline-block;
+      min-width: 80px;
+    }
+
+    .contact-meta p + p {
+      margin-top: 0.3rem;
+    }
+
+    .contact-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.7rem;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 1.7rem 0 2rem;
+      border-top: 1px solid rgba(148, 163, 184, 0.4);
+      background: #ffffff;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .hero-inner,
+      .about-grid,
+      .testimonials,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-highlight-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-highlight-books {
+        justify-content: flex-start;
+      }
+
+      .card-grid,
+      .books-grid,
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 1.25rem;
+        left: 1.25rem;
+        background: rgba(255, 255, 255, 0.98);
+        border-radius: 16px;
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        padding: 0.75rem 0.9rem;
+        flex-direction: column;
+        gap: 0.75rem;
+        box-shadow: 0 16px 30px rgba(15, 23, 42, 0.12);
+        transform-origin: top right;
+        transform: scaleY(0.9);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity var(--transition), transform var(--transition);
+      }
+
+      .nav-links.open {
+        opacity: 1;
+        transform: scaleY(1);
+        pointer-events: auto;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 2.4rem;
+      }
+
+      section {
+        padding: 3rem 0;
+      }
+
+      .card-grid,
+      .books-grid,
+      .product-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .steps {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-meta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="nav-left">
+          <!-- Replace this brand-mark with your logo image if you like -->
+          <div class="brand-mark">CS</div>
+          <div class="brand-text">
+            <div class="brand-title">Caribbean Scribbles</div>
+            <div class="brand-subtitle">Publishing & Digital Story Studio</div>
+          </div>
+        </div>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" id="nav-toggle">☰</button>
+
+        <div class="nav-links" id="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#shop">Shop</a>
+          <a href="#books">Our Books</a>
+          <a href="#authors">For Authors</a>
+          <a href="#contact">Contact</a>
+          <a href="#newsletter" class="nav-cta">
+            <span>Join newsletter</span> ✨
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="home" class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Caribbean-rooted, globally ready
+        </div>
+
+        <h1 class="hero-title">
+          <span>Caribbean Scribbles Publishing</span><br />
+          A home for bold island stories.
+        </h1>
+
+        <p class="hero-tagline">
+          We help writers turn Caribbean memories, melodies, and everyday magic into beautifully designed books and digital experiences for children and adults.
+        </p>
+
+        <div class="hero-badges">
+          <div class="badge">
+            <span class="badge-dot"></span>
+            Children’s picture books & middle grade
+          </div>
+          <div class="badge">
+            <span class="badge-dot"></span>
+            Author coaching & self-publishing support
+          </div>
+          <div class="badge">
+            <span class="badge-dot"></span>
+            Digital-first Caribbean storytelling
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <button class="btn btn-primary" data-scroll="#shop">
+            Shop our books 📚
+          </button>
+          <button class="btn btn-outline" data-scroll="#authors">
+            Publish with us ➜
+          </button>
+        </div>
+
+        <div class="hero-meta">
+          <span>✔️ Saint Kitts & Nevis based</span>
+          <span>✔️ Hybrid & indie publishing support</span>
+          <span>✔️ Projects for schools, NGOs & creatives</span>
+        </div>
+      </div>
+
+      <aside class="hero-highlight" aria-label="Featured Caribbean Scribbles titles">
+        <div class="hero-highlight-inner">
+          <div>
+            <div class="hero-highlight-label">Featured collection</div>
+            <div class="hero-highlight-title">Caribbean childhood, captured on the page</div>
+            <p class="hero-highlight-text">
+              From Sugar Mas bells to first-day-of-school jitters, our books celebrate Caribbean children seeing themselves at the center of every story.
+            </p>
+          </div>
+          <div class="hero-highlight-books">
+            <!-- Placeholder book spines – swap text with your real titles -->
+            <div class="book-spine">
+              <div class="book-tag">Kids</div>
+              <div class="book-title">My Kindergarten Handbook</div>
+              <div class="book-meta">Early learner activity book</div>
+            </div>
+            <div class="book-spine">
+              <div class="book-tag">Holiday</div>
+              <div class="book-title">The Jingle of the Sugar Mas Bells</div>
+              <div class="book-meta">A Saint Kitts Christmas story</div>
+            </div>
+            <div class="book-spine">
+              <div class="book-tag">Proud</div>
+              <div class="book-title">Saint Kitts Pride Exercise Book</div>
+              <div class="book-meta">Island-themed practice pages</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">About Caribbean Scribbles</div>
+        <h2 class="section-title">A digital publishing studio for Caribbean voices</h2>
+        <p class="section-subtitle">
+          Caribbean Scribbles Publishing blends island heritage with modern digital tools to help authors move from idea to ISBN—without losing their authentic voice.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Our mission</h3>
+          <p>
+            We exist to make it easier for Caribbean stories to reach readers everywhere: in classrooms, on tablets, in libraries, and in little hands at bedtime.
+          </p>
+          <ul class="about-list">
+            <li>
+              <span class="about-bullet"></span>
+              Champion books that center Caribbean children, families, culture, and everyday life.
+            </li>
+            <li>
+              <span class="about-bullet"></span>
+              Support new and emerging authors through practical, step-by-step guidance.
+            </li>
+            <li>
+              <span class="about-bullet"></span>
+              Use tech to keep publishing accessible, transparent, and sustainable.
+            </li>
+          </ul>
+        </div>
+
+        <div class="about-card">
+          <h3>What we focus on</h3>
+          <p>We specialise in small-batch, high-care projects that reflect the region:</p>
+          <div class="about-pill-grid">
+            <span class="about-pill">Children’s picture books</span>
+            <span class="about-pill">Middle grade & chapter books</span>
+            <span class="about-pill">Workbooks & activity books</span>
+            <span class="about-pill">School & church resources</span>
+            <span class="about-pill">Author coaching calls</span>
+            <span class="about-pill">KDP & IngramSpark setup</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Publishing services</div>
+        <h2 class="section-title">From draft to bookshelf (and e-reader)</h2>
+        <p class="section-subtitle">
+          Choose the level of support you need—whether you’re polishing a finished manuscript or just beginning to shape your idea.
+        </p>
+      </div>
+
+      <div class="card-grid">
+        <article class="card">
+          <span class="card-tag">For authors</span>
+          <h3>Manuscript & story coaching</h3>
+          <p>
+            Shape your story with gentle, practical feedback tailored to Caribbean settings, school-age readers, and family audiences.
+          </p>
+          <ul>
+            <li>Story idea & structure review</li>
+            <li>Character and setting development</li>
+            <li>Feedback focused on clarity & voice</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="card-tag">Book production</span>
+          <h3>Editing, layout & publishing setup</h3>
+          <p>
+            We support you through editing, interior design, and getting your book print-ready for platforms like Amazon KDP or IngramSpark.
+          </p>
+          <ul>
+            <li>Light copyediting & line checks</li>
+            <li>Typesetting and interior design</li>
+            <li>KDP / print-on-demand file preparation</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="card-tag">For schools & groups</span>
+          <h3>Custom projects & workshops</h3>
+          <p>
+            Partner with us on custom workbooks, activity books, or creative writing sessions for schools, NGOs, and community groups.
+          </p>
+          <ul>
+            <li>Brand-aligned booklets & resources</li>
+            <li>Author talks & creative sessions</li>
+            <li>Small-batch printing guidance</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP / E-COMMERCE -->
+  <section id="shop">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Shop</div>
+        <h2 class="section-title">Shop Caribbean Scribbles books</h2>
+        <p class="section-subtitle">
+          Order directly from Caribbean Scribbles Publishing or via your favourite online bookstore. Update the buttons below with your real Amazon or local-order links.
+        </p>
+      </div>
+
+      <div class="product-grid">
+        <!-- PRODUCT 1 -->
+        <article class="product-card">
+          <div class="product-cover">The Jingle of the Sugar Mas Bells – Hardcover</div>
+          <div class="product-title">The Jingle of the Sugar Mas Bells</div>
+          <div class="product-meta">
+            A Saint Kitts Christmas story filled with carnival spirit, music, and the magic of Sugar Mas.
+          </div>
+          <div class="product-price">Price: US$xx.xx / EC$xx.xx</div>
+          <div class="product-actions">
+            <!-- Replace # with your real Amazon or sales link -->
+            <a href="#" class="btn btn-primary" target="_blank" rel="noopener">
+              Buy on Amazon
+            </a>
+            <!-- Example: scroll to contact for local orders -->
+            <button class="btn btn-outline" type="button" data-scroll="#contact">
+              Order locally / bulk
+            </button>
+          </div>
+          <div class="product-note">
+            Perfect for classroom read-alouds and Christmas gift baskets.
+          </div>
+        </article>
+
+        <!-- PRODUCT 2 -->
+        
+			 <!-- PRODUCT 2 -->
+<article class="product-card">
+  <div class="product-cover">My Kindergarten Handbook – Activity Book</div>
+  <div class="product-title">My Kindergarten Handbook</div>
+  <div class="product-meta">
+    Early learner workbook for handwriting, counting, and confidence-building activities with a Caribbean touch.
+  </div>
+  <div class="product-price">Price: US$xx.xx / EC$xx.xx</div>
+  <div class="product-actions">
+    <!-- Amazon buy link -->
+    <a
+      href="https://www.amazon.com/My-Kindergarten-Handbook-Little-Kinder/dp/B0F4M2QL24/ref=tmm_pap_swatch_0?_encoding=UTF8&dib_tag=se&dib=eyJ2IjoiMSJ9.rdBgAosjucW7qWnsuzb9PODi2duGdiCImRWSVrgFYdblcay1hGPT75zAQ0OKaKM4ndqc3oh7gQxkZ1yl2osSBRVPhlbHy47NhYNFgPQHJBrJUPXeTijhEVQZch8NuS_OQJ48FesTdywHmX5pUzkAm005vyAFRKDyDG0raFoXdNgzVVQRSgiFH9YPbEyw0Jp2c2ARHlSS94yXZ4ZkMhWgX4Zggs2mJuzSPjWmPhAKG9Q.wPKvT4OCqAqmotOwwnSM9P9S4dNvvdnXnwgpUR-dgvM&qid=1763045166&sr=8-1"
+      class="btn btn-primary"
+      target="_blank"
+      rel="noopener"
+    >
+      Buy on Amazon
+    </a>
+
+    <!-- WhatsApp order -->
+    <a
+      href="https://wa.me/18696639220?text=Hi%20Caribbean%20Scribbles%2C%20I%27d%20like%20to%20order%20%27My%20Kindergarten%20Handbook%27."
+      class="btn btn-outline"
+      target="_blank"
+      rel="noopener"
+    >
+      Order via WhatsApp
+    </a>
+  </div>
+  <div class="product-note">
+    Ideal for ages 4–6 and early primary classrooms.
+  </div>
+</article>
+ 
+            
+            <button class="btn btn-outline" type="button" data-scroll="#contact">
+              School / class sets
+            </button>
+          </div>
+          <div class="product-note">
+            Ideal for ages 4–6 and early primary classrooms.
+          </div>
+        </article>
+
+        <!-- PRODUCT 3 -->
+        <article class="product-card">
+          <div class="product-cover">Saint Kitts Pride Exercise Book – Pack</div>
+          <div class="product-title">Saint Kitts Pride Exercise Book</div>
+          <div class="product-meta">
+            Lined exercise books featuring island pride, perfect for everyday writing practice and gifts from home.
+          </div>
+          <div class="product-price">Price: From US$13.00 Hardcover/US6.08 Paperback</div>
+          <div class="product-actions">
+            <a href="#" class="btn btn-primary" target="_blank" rel="noopener">
+              Order single / pack
+            </a>
+            <button class="btn btn-outline" type="button" data-scroll="#contact">
+              Bookstore / bulk orders
+            </button>
+          </div>
+          <div class="product-note">
+            Ask about special pricing for schools, bookstores, and gift shops.
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKS -->
+  <section id="books">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Our books</div>
+        <h2 class="section-title">Caribbean Scribbles titles & projects</h2>
+        <p class="section-subtitle">
+          Here are some of the stories and resources connected to Caribbean Scribbles Publishing. Replace links and details with your latest titles.
+        </p>
+      </div>
+
+      <div class="books-grid">
+        <article class="book-card">
+          <div class="book-cover">
+            My Kindergarten Handbook
+          </div>
+          <div class="book-meta-top">Early learner workbook</div>
+          <div class="book-title-main">My Kindergarten Handbook</div>
+          <div class="book-sub">
+            An activity-filled companion for little learners starting school, with handwriting, numbers, and confidence-boosting tasks.
+          </div>
+          <div class="book-footer">
+            <span class="book-tagline">Ages 4–6</span>
+            <a class="book-link" href="#" target="_blank" rel="noopener">View on Amazon</a>
+          </div>
+        </article>
+
+        <article class="book-card">
+          <div class="book-cover">
+            The Jingle of the Sugar Mas Bells
+          </div>
+          <div class="book-meta-top">Holiday story</div>
+          <div class="book-title-main">The Jingle of the Sugar Mas Bells</div>
+          <div class="book-sub">
+            A Saint Kitts Christmas tale filled with carnival colour, street parades, and the rhythm of Sugar Mas bells.
+          </div>
+          <div class="book-footer">
+            <span class="book-tagline">Ages 6–10</span>
+            <a class="book-link" href="#" target="_blank" rel="noopener">View on Amazon</a>
+          </div>
+        </article>
+
+        <article class="book-card">
+          <div class="book-cover">
+            Saint Kitts Pride Exercise Book
+          </div>
+          <div class="book-meta-top">School & practice</div>
+          <div class="book-title-main">Saint Kitts Pride Exercise Book</div>
+          <div class="book-sub">
+            A lined, island-themed exercise book that turns everyday writing practice into a quiet celebration of home.
+          </div>
+          <div class="book-footer">
+            <span class="book-tagline">All ages</span>
+            <a class="book-link" href="#" target="_blank" rel="noopener">Order info</a>
+          </div>
+        </article>
+
+        <!-- Add more book cards as you publish new titles -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOR AUTHORS / PROCESS -->
+  <section id="authors">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">For authors</div>
+        <h2 class="section-title">How we can work together</h2>
+        <p class="section-subtitle">
+          Whether you’re working on your first children’s book or expanding a series, we’ll walk with you step by step.
+        </p>
+      </div>
+
+      <div class="steps">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-title">Share your idea</div>
+          <div class="step-text">
+            Tell us about your story, who it’s for, and where you are in the writing process. We’ll review and suggest the best next steps.
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-title">Story & structure review</div>
+          <div class="step-text">
+            We help you strengthen your manuscript, clarify your message, and ensure your book works for your specific age group.
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-title">Design & publishing setup</div>
+          <div class="step-text">
+            We guide you through layout, file preparation, and platform setup (for example: Amazon KDP or other print-on-demand services).
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <div class="step-title">Launch support</div>
+          <div class="step-text">
+            Get simple launch ideas tailored to your audience—school visits, community events, online promotions, or small local book runs.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS & NEWSLETTER -->
+  <section id="newsletter">
+    <div class="container">
+      <div class="testimonials">
+        <div class="quote-card">
+          <div class="quote-mark">“</div>
+          <div class="quote-text">
+            Working with Caribbean Scribbles helped me move from a notebook full of ideas to a finished book I could hold in my hands and share with children in my community.
+          </div>
+          <div class="quote-author">Placeholder Author Name</div>
+          <div class="quote-role">Children’s book author (Testimonial here)</div>
+        </div>
+
+        <aside class="cta-panel">
+          <h3>Join the Caribbean Scribbles list</h3>
+          <p>
+            Get updates on new releases, calls for manuscripts, writing workshops, and resources for Caribbean authors and educators.
+          </p>
+          <!-- Connect this form to your email service (Mailchimp, ConvertKit, etc.) -->
+          <form action="#" method="post">
+            <input
+              type="email"
+              name="email"
+              placeholder="email@example.com"
+              required
+            />
+            <button class="btn btn-primary" type="submit">
+              Get updates
+            </button>
+          </form>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Get in touch</div>
+        <h2 class="section-title">Let’s talk about your book or project</h2>
+        <p class="section-subtitle">
+          Share a bit about what you’re working on and the kind of support you’re looking for. We typically reply within a few business days.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <form class="contact-form">
+          <h3>Send us a message</h3>
+          <p>Fill out this form to start the conversation about your book or collaboration idea.</p>
+
+          <div class="field-group">
+            <label class="field-label" for="name">Name</label>
+            <input id="name" type="text" name="name" placeholder="Your full name" required />
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="you@example.com" required />
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="project-type">Project type</label>
+            <input
+              id="project-type"
+              type="text"
+              name="projectType"
+              placeholder="Children’s picture book, workbook, workshop, etc."
+            />
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="message">Tell us more</label>
+            <div class="field-helper">
+              Briefly describe your idea, your readers (age group), and where you are in the process.
+            </div>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+
+          <!-- Add your own form handler URL (Formspree, Netlify Forms, etc.) -->
+          <button class="btn btn-primary" type="submit">
+            Submit enquiry
+          </button>
+
+          <p class="contact-note">
+            Note: This form is for general enquiries only. No spam or unsolicited offers, please.
+          </p>
+        </form>
+
+        <div class="contact-meta">
+          <p><strong>Based in:</strong> Saint Kitts & Nevis (Caribbean)</p>
+          <p><strong>Email:</strong>caribbeanscribblespublishing@gmail.com (example)</p>
+          <p><strong>Instagram:</strong> @caribbeanscribbles )</p>
+          <p><strong>For schools & NGOs:</strong> Ask about bulk orders, classroom sets, and custom workshop sessions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-row">
+      <div>© <span id="year"></span> Caribbean Scribbles Publishing. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#home">Back to top</a>
+        <a href="#services">Services</a>
+        <a href="#shop">Shop</a>
+        <a href="#books">Books</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.getElementById("nav-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    navToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    // Smooth scroll for elements that use data-scroll
+    document.querySelectorAll("[data-scroll]").forEach((el) => {
+      el.addEventListener("click", (e) => {
+        const target = el.getAttribute("data-scroll");
+        const section = document.querySelector(target);
+        if (section) {
+          e.preventDefault();
+          const y = section.getBoundingClientRect().top + window.pageYOffset - 70;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
+      });
+    });
+
+    // Auto-update year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+Add Caribbean Scribbles Website 
