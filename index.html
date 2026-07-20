@@ -362,44 +362,78 @@
     .hero-highlight-books {
       display: flex;
       justify-content: flex-end;
-      gap: 0.4rem;
+      gap: 0.75rem;
+      flex-wrap: wrap;
     }
 
     .book-spine {
-      width: 56px;
+      width: 110px;
       border-radius: 14px;
-      background: linear-gradient(160deg, #f97316, #facc15);
-      padding: 0.65rem 0.5rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      font-size: 0.58rem;
-      color: #111827;
-      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.35);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.4);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+    }
+
+    .book-spine:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.55);
     }
 
     .book-spine:nth-child(2) {
-      background: linear-gradient(150deg, #22c55e, #a3e635);
       transform: translateY(6px);
     }
 
+    .book-spine:nth-child(2):hover {
+      transform: translateY(2px) scale(1.03);
+    }
+
     .book-spine:nth-child(3) {
-      background: linear-gradient(145deg, #0ea5e9, #38bdf8);
       transform: translateY(12px);
+    }
+
+    .book-spine:nth-child(3):hover {
+      transform: translateY(8px) scale(1.03);
+    }
+
+    .book-spine-img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      display: block;
+      border-radius: 14px 14px 0 0;
+    }
+
+    .book-spine-info {
+      padding: 0.45rem 0.5rem 0.5rem;
+      background: rgba(0,0,0,0.45);
+      border-radius: 0 0 14px 14px;
     }
 
     .book-tag {
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.1em;
+      font-size: 0.52rem;
+      color: #facc15;
+      margin-bottom: 0.15rem;
     }
 
     .book-title {
       font-weight: 600;
+      font-size: 0.56rem;
+      color: #f1f5f9;
+      line-height: 1.3;
     }
 
     .book-meta {
-      opacity: 0.85;
+      font-size: 0.5rem;
+      color: rgba(241,245,249,0.75);
+      margin-top: 0.15rem;
     }
 
     /* SECTIONS */
@@ -1113,27 +1147,52 @@
             </p>
           </div>
           <div class="hero-highlight-books">
+
+            <!-- Book 1: My Kindergarten Handbook -->
             <a href="https://www.amazon.com/My-Kindergarten-Handbook-Little-Kinder/dp/B0F4M2QL24" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
               <div class="book-spine">
-                <div class="book-tag">Kids</div>
-                <div class="book-title">My Kindergarten Handbook</div>
-                <div class="book-meta">Early learner activity book</div>
+                <img class="book-spine-img"
+                     src="https://images-na.ssl-images-amazon.com/images/P/B0F4M2QL24.01.LZZZZZZZ.jpg"
+                     onerror="this.style.display='none'"
+                     alt="My Kindergarten Handbook cover" />
+                <div class="book-spine-info">
+                  <div class="book-tag">Kids</div>
+                  <div class="book-title">My Kindergarten Handbook</div>
+                  <div class="book-meta">Ages 4–6 · Activity book</div>
+                </div>
               </div>
             </a>
+
+            <!-- Book 2: The Jingle of the Sugar Mas Bells -->
             <a href="https://www.amazon.com/Jingle-Sugar-Mas-Bells/dp/B0G473HPSN" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
               <div class="book-spine">
-                <div class="book-tag">Holiday</div>
-                <div class="book-title">The Jingle of the Sugar Mas Bells</div>
-                <div class="book-meta">A Saint Kitts Christmas story</div>
+                <img class="book-spine-img"
+                     src="https://images-na.ssl-images-amazon.com/images/P/B0G473HPSN.01.LZZZZZZZ.jpg"
+                     onerror="this.style.display='none'"
+                     alt="The Jingle of the Sugar Mas Bells cover" />
+                <div class="book-spine-info">
+                  <div class="book-tag">Holiday</div>
+                  <div class="book-title">The Jingle of the Sugar Mas Bells</div>
+                  <div class="book-meta">Ages 5–10 · Christmas story</div>
+                </div>
               </div>
             </a>
+
+            <!-- Book 3: Saint Kitts Pride Exercise Book -->
             <a href="https://www.amazon.com/Saint-Kitts-Pride-Exercise-Book/dp/B0FL15G3KL" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
               <div class="book-spine">
-                <div class="book-tag">Proud</div>
-                <div class="book-title">Saint Kitts Pride Exercise Book</div>
-                <div class="book-meta">Island-themed practice pages</div>
+                <img class="book-spine-img"
+                     src="https://images-na.ssl-images-amazon.com/images/P/B0FL15G3KL.01.LZZZZZZZ.jpg"
+                     onerror="this.style.display='none'"
+                     alt="Saint Kitts Pride Exercise Book cover" />
+                <div class="book-spine-info">
+                  <div class="book-tag">Proud</div>
+                  <div class="book-title">Saint Kitts Pride Exercise Book</div>
+                  <div class="book-meta">All ages · Island pride</div>
+                </div>
               </div>
             </a>
+
           </div>
         </div>
       </aside>
