@@ -1443,38 +1443,88 @@
   <!-- TESTIMONIALS & NEWSLETTER -->
   <section id="newsletter">
     <div class="container">
-<!-- Substack Signup Widget -->
- <aside class="cta-panel">
-          <h3>Join the Caribbean Scribbles list</h3>
-          <p>
-            Get updates on new releases, calls for manuscripts, writing workshops, and resources for Caribbean authors and educators.
-          </p>
-          <!-- Connect this form to your email service (Mailchimp, ConvertKit, etc.) -->
-         <!-- SUBSTACK NEWSLETTER SIGNUP -->
-<!-- Subscribe FORM (Supascribe -->
-<div data-supascribe-embed-id="225334513538" data-supascribe-subscribe></div>
-<!-- Supascribe Script -->
-<script src="https://js.supascribe.com/v1/loader/a4WTYCREs7evlCDyAcuEIBK2pUp1.js" async></script>
 
+      <!-- NEWSLETTER SIGNUP PANEL -->
+      <aside class="cta-panel">
+        <h3>Get Weekly Book Recommendations</h3>
+        <p>
+          Join our mailing list and receive curated Caribbean children's book recommendations every Monday, Wednesday, and Friday &mdash; straight to your inbox.
+        </p>
 
+        <!-- Segmented Newsletter Signup Form -->
+        <form
+          id="newsletter-form"
+          action="https://formspree.io/f/mgvrjejj"
+          method="POST"
+          style="display:flex; flex-direction:column; gap:0.6rem; margin-top:1rem;"
+        >
+          <input type="hidden" name="_subject" value="New Newsletter Subscriber - Caribbean Scribbles" />
+          <input type="hidden" name="_next" value="https://caribbeanscribblespublishing.com/#newsletter-thanks" />
 
- </aside>
+          <input
+            type="text"
+            name="name"
+            placeholder="Your name"
+            required
+            style="border-radius:999px; border:none; padding:0.6rem 1rem; font-size:0.9rem; background:#fff; color:#333;"
+          />
 
-<!--Testimonial -->
+          <input
+            type="email"
+            name="email"
+            placeholder="Your email address"
+            required
+            style="border-radius:999px; border:none; padding:0.6rem 1rem; font-size:0.9rem; background:#fff; color:#333;"
+          />
+
+          <select
+            name="audience"
+            required
+            style="border-radius:999px; border:none; padding:0.6rem 1rem; font-size:0.9rem; background:#fff; color:#555;"
+          >
+            <option value="" disabled selected>I am a&hellip; (select one)</option>
+            <option value="parent">Parent / Guardian</option>
+            <option value="teacher">Teacher / Educator</option>
+            <option value="diaspora">Caribbean Diaspora Community Member</option>
+            <option value="general">General Book Lover</option>
+          </select>
+
+          <button
+            type="submit"
+            style="border-radius:999px; background:#ffc857; color:#222; font-weight:700; border:none; padding:0.65rem 1.4rem; font-size:0.95rem; cursor:pointer;"
+          >
+            Subscribe to Weekly Picks &#128218;
+          </button>
+        </form>
+
+        <p id="newsletter-thanks" style="display:none; margin-top:0.8rem; color:#e0f2fe; font-weight:600;">
+          Thank you for subscribing! Your first book recommendations are on their way.
+        </p>
+
+        <script>
+          if (window.location.hash === '#newsletter-thanks') {
+            document.getElementById('newsletter-thanks').style.display = 'block';
+            document.getElementById('newsletter-form').style.display = 'none';
+          }
+        </script>
+
+        <p style="font-size:0.78rem; margin-top:0.8rem; color:#b2d8dc;">
+          We send emails on Monday, Wednesday &amp; Friday. No spam, ever. Unsubscribe anytime.
+        </p>
+      </aside>
+
+      <!-- TESTIMONIAL -->
       <div class="testimonials">
         <div class="quote-card">
-          <div class="quote-mark">“</div>
+          <div class="quote-mark">"</div>
           <div class="quote-text">
             Working with Caribbean Scribbles helped me move from a notebook full of ideas to a finished book I could hold in my hands and share with children in my community.
           </div>
           <div class="quote-author"></div>
-          <div class="quote-role">Children’s book author (Testimonial here)</div>
+          <div class="quote-role">Children's book author</div>
         </div>
-	  </section>
-       
-   
-
       </div>
+
     </div>
   </section>
 
