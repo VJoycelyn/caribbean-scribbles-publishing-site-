@@ -572,7 +572,7 @@
 
     .product-cover {
       border-radius: 14px;
-      height: 160px;
+      height: 220px;
       background: linear-gradient(140deg, #f97316, #facc15);
       display: flex;
       align-items: center;
@@ -580,8 +580,20 @@
       color: #111827;
       font-weight: 700;
       font-size: 0.9rem;
-      padding: 0.6rem;
+      padding: 0;
       text-align: center;
+      overflow: hidden;
+    }
+    .product-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .product-cover img:hover {
+      transform: scale(1.04);
     }
 
     .product-title {
@@ -639,7 +651,7 @@
 
     .book-cover {
       border-radius: 14px;
-      height: 170px;
+      height: 200px;
       background: linear-gradient(145deg, #f97316, #facc15);
       display: flex;
       align-items: center;
@@ -647,8 +659,20 @@
       color: #111827;
       font-weight: 700;
       font-size: 0.85rem;
-      padding: 0.7rem;
+      padding: 0;
       text-align: center;
+      overflow: hidden;
+    }
+    .book-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .book-cover img:hover {
+      transform: scale(1.04);
     }
 
     .book-meta-top {
@@ -1226,109 +1250,146 @@
       </div>
 
       <div class="product-grid">
-        <!-- PRODUCT 1 -->
+
+        <!-- PRODUCT 1: Island Lab -->
         <article class="product-card">
-          <div class="product-cover">The Jingle of the Sugar Mas Bells – Hardcover</div>
-          <div class="product-title">The Jingle of the Sugar Mas Bells</div>
-          <div class="product-meta">
-            A Saint Kitts Christmas story filled with carnival spirit, music, and the magic of Sugar Mas.
-          </div>
-          <div class="product-price">Coming Soon</div>
-          <div class="product-actions">
-            <!-- Replace # with your real Amazon or sales link -->
-            <a href="#" class="btn btn-primary" target="_blank" rel="noopener">
-              Buy on Amazon
+          <div class="product-cover">
+            <a href="https://www.amazon.com/Island-Lab-Caribbean-Experiments-Explorers/dp/B0GY155LQ2" target="_blank" rel="noopener">
+              <img src="https://images-na.ssl-images-amazon.com/images/P/B0GY155LQ2.01.LZZZZZZZ.jpg"
+                   onerror="this.onerror=null;this.parentElement.innerHTML='<span style=padding:1rem;font-weight:700>Island Lab</span>';"
+                   alt="Island Lab: 15 Caribbean Science Experiments for Young Explorers book cover"
+                   loading="lazy" />
             </a>
-            <!-- Example: scroll to contact for local orders -->
-            <button class="btn btn-outline" type="button" data-scroll="#contact">
-              Order locally / bulk
-            </button>
           </div>
-          <div class="product-note">
-            Perfect for classroom read-alouds and Christmas gift baskets.
+          <div class="product-title">Island Lab: 15 Caribbean Science Experiments</div>
+          <div class="product-meta">Join Akejah on a STEM adventure through the Caribbean — 15 step-by-step experiments using local island materials.</div>
+          <div class="product-price">From $7.99 paperback · $3.99 Kindle</div>
+          <div class="product-actions">
+            <a href="https://www.amazon.com/Island-Lab-Caribbean-Experiments-Explorers/dp/B0GY155LQ2" class="btn btn-primary" target="_blank" rel="noopener">Buy on Amazon</a>
+            <a href="https://wa.me/18696639220?text=Hi%20Caribbean%20Scribbles%2C%20I%27d%20like%20to%20order%20Island%20Lab." class="btn btn-outline" target="_blank" rel="noopener">Order via WhatsApp</a>
           </div>
+          <div class="product-note">Ages 6–12 · ⭐⭐⭐⭐⭐ Perfect for STEM classrooms and science fairs.</div>
         </article>
 
-        <!-- PRODUCT 2 -->
-        
-			 <!-- PRODUCT 2 -->
-<article class="product-card">
-  <div class="product-cover">My Kindergarten Handbook – Activity Book</div>
-  <div class="product-title">My Kindergarten Handbook</div>
-  <div class="product-meta">
-    Early learner workbook for handwriting, counting, and confidence-building activities with a Caribbean touch.
-  </div>
-  <div class="product-price">Price: US$4.00 Digital Download/US$13.00</div>
-  <div class="product-actions">
-    <!-- Amazon buy link -->
-    <a
-      href="https://www.amazon.com/My-Kindergarten-Handbook-Little-Kinder/dp/B0F4M2QL24/ref=tmm_pap_swatch_0?_encoding=UTF8&dib_tag=se&dib=eyJ2IjoiMSJ9.rdBgAosjucW7qWnsuzb9PODi2duGdiCImRWSVrgFYdblcay1hGPT75zAQ0OKaKM4ndqc3oh7gQxkZ1yl2osSBRVPhlbHy47NhYNFgPQHJBrJUPXeTijhEVQZch8NuS_OQJ48FesTdywHmX5pUzkAm005vyAFRKDyDG0raFoXdNgzVVQRSgiFH9YPbEyw0Jp2c2ARHlSS94yXZ4ZkMhWgX4Zggs2mJuzSPjWmPhAKG9Q.wPKvT4OCqAqmotOwwnSM9P9S4dNvvdnXnwgpUR-dgvM&qid=1763045166&sr=8-1"
-      class="btn btn-primary"
-      target="_blank"
-      rel="noopener"
-    >
-      Buy on Amazon
-    </a>
-
-    <!-- WhatsApp order -->
-    <a
-      href="https://wa.me/18696639220?text=Hi%20Caribbean%20Scribbles%2C%20I%27d%20like%20to%20order%20%27My%20Kindergarten%20Handbook%27."
-      class="btn btn-outline"
-      target="_blank"
-      rel="noopener"
-    >
-      Order via WhatsApp
-    </a>
-  </div>
-  <div class="product-note">
-    Ideal for ages 4–6 and early primary classrooms.
-  </div>
-</article>
- 
-            
-            <button class="btn btn-outline" type="button" data-scroll="#contact">
-              School / class sets
-            </button>
+        <!-- PRODUCT 2: Akejah and the Rules of Harmony Island -->
+        <article class="product-card">
+          <div class="product-cover">
+            <a href="https://www.amazon.com/Akejah-Rules-Harmony-island-Caribbean/dp/B0G3F2GTFM" target="_blank" rel="noopener">
+              <img src="https://images-na.ssl-images-amazon.com/images/P/B0G3F2GTFM.01.LZZZZZZZ.jpg"
+                   onerror="this.onerror=null;this.parentElement.innerHTML='<span style=padding:1rem;font-weight:700>Akejah &amp; the Rules of Harmony Island</span>';"
+                   alt="Akejah and the Rules of Harmony Island book cover"
+                   loading="lazy" />
+            </a>
           </div>
-          <div class="product-note">
-            Ideal for ages 4–6 and early primary classrooms.
+          <div class="product-title">Akejah and the Rules of Harmony Island</div>
+          <div class="product-meta">A Caribbean story about kindness, courage, and the power of rules — where every rule has a little magic behind it.</div>
+          <div class="product-price">From $8.40 paperback · $3.99 Kindle</div>
+          <div class="product-actions">
+            <a href="https://www.amazon.com/Akejah-Rules-Harmony-island-Caribbean/dp/B0G3F2GTFM" class="btn btn-primary" target="_blank" rel="noopener">Buy on Amazon</a>
+            <a href="https://wa.me/18696639220?text=Hi%20Caribbean%20Scribbles%2C%20I%27d%20like%20to%20order%20Akejah%20and%20the%20Rules%20of%20Harmony%20Island." class="btn btn-outline" target="_blank" rel="noopener">Order via WhatsApp</a>
           </div>
+          <div class="product-note">Ages 6–10 · ⭐⭐⭐⭐⭐ Ideal for classroom read-alouds on community values.</div>
         </article>
 
-       
-      <!-- PRODUCT 3 -->
-<article class="product-card">
-  <div class="product-cover">Saint Kitts Pride Exercise Book – Pack</div>
-  <div class="product-title">Saint Kitts Pride Exercise Book</div>
-  <div class="product-meta">
-    Lined exercise books featuring island pride, perfect for everyday writing practice and gifts from home.
-  </div>
-  <div class="product-price">Price:From US$6.08 paperback/US$13.00 Hardcover per book</div>
-  <div class="product-actions">
-    <!-- Amazon link -->
-    <a
-      href="https://www.amazon.com/Saint-Kitts-Pride-Exercise-Book/dp/B0FL15G3KL/ref=sr_1_1?crid=39D67PNF148AW&dib=eyJ2IjoiMSJ9.4yriTf9_mOEgDh9iKCHGdg.eYLOlSThv8ZE6TEvfIor1bChL5zIJowhfof0RaKn0S4&dib_tag=se&keywords=saint+kitts+pride+exercise+book&qid=1763045292&sprefix=saint+kitts+pride%2Caps%2C165&sr=8-1"
-      class="btn btn-primary"
-      target="_blank"
-      rel="noopener"
-    >
-      Buy on Amazon
-    </a>
+        <!-- PRODUCT 3: Sweets, Treats, Toys & Me! -->
+        <article class="product-card">
+          <div class="product-cover">
+            <a href="https://www.amazon.com/Sweets-Treats-Toys-Entrepreneurial-Adventure/dp/B0GXRNHRHS" target="_blank" rel="noopener">
+              <img src="https://images-na.ssl-images-amazon.com/images/P/B0GXRNHRHS.01.LZZZZZZZ.jpg"
+                   onerror="this.onerror=null;this.parentElement.innerHTML='<span style=padding:1rem;font-weight:700>Sweets, Treats, Toys &amp; Me!</span>';"
+                   alt="Sweets, Treats, Toys and Me book cover"
+                   loading="lazy" />
+            </a>
+          </div>
+          <div class="product-title">Sweets, Treats, Toys &amp; Me!</div>
+          <div class="product-meta">An 8-year-old entrepreneurial adventure — a delightful story capturing the pure joy of childhood and island spirit.</div>
+          <div class="product-price">From $8.99 paperback · $3.99 Kindle</div>
+          <div class="product-actions">
+            <a href="https://www.amazon.com/Sweets-Treats-Toys-Entrepreneurial-Adventure/dp/B0GXRNHRHS" class="btn btn-primary" target="_blank" rel="noopener">Buy on Amazon</a>
+            <a href="https://wa.me/18696639220?text=Hi%20Caribbean%20Scribbles%2C%20I%27d%20like%20to%20order%20Sweets%20Treats%20Toys%20and%20Me." class="btn btn-outline" target="_blank" rel="noopener">Order via WhatsApp</a>
+          </div>
+          <div class="product-note">Ages 5–10 · ⭐⭐⭐⭐⭐ A favourite for young entrepreneurs and dreamers.</div>
+        </article>
 
-    <!-- WhatsApp order -->
-    <a
-      href="https://wa.me/18696639220?text=Hi%20Caribbean%20Scribbles%2C%20I%27d%20like%20to%20order%20%27Saint%20Kitts%20Pride%20Exercise%20Book%27%20%28single%20or%20pack%29."
-      class="btn btn-outline"
-      target="_blank"
-      rel="noopener"
-    >
-      Order via WhatsApp
-    </a>
-  </div>
-  <div class="product-note">
-    Ask about special pricing for schools, bookstores, and gift shops.
-  </div>
-</article>
+        <!-- PRODUCT 4: The Jingle of the Sugar Mas Bells -->
+        <article class="product-card">
+          <div class="product-cover">
+            <a href="https://www.amazon.com/Jingle-Sugar-Mas-Bells/dp/B0G473HPSN" target="_blank" rel="noopener">
+              <img src="https://images-na.ssl-images-amazon.com/images/P/B0G473HPSN.01.LZZZZZZZ.jpg"
+                   onerror="this.onerror=null;this.parentElement.innerHTML='<span style=padding:1rem;font-weight:700>The Jingle of the Sugar Mas Bells</span>';"
+                   alt="The Jingle of the Sugar Mas Bells book cover"
+                   loading="lazy" />
+            </a>
+          </div>
+          <div class="product-title">The Jingle of the Sugar Mas Bells</div>
+          <div class="product-meta">A Saint Kitts Christmas tale filled with carnival colour, street parades, and the rhythm of Sugar Mas bells.</div>
+          <div class="product-price">From $8.40 paperback · $3.99 Kindle</div>
+          <div class="product-actions">
+            <a href="https://www.amazon.com/Jingle-Sugar-Mas-Bells/dp/B0G473HPSN" class="btn btn-primary" target="_blank" rel="noopener">Buy on Amazon</a>
+            <a href="https://wa.me/18696639220?text=Hi%20Caribbean%20Scribbles%2C%20I%27d%20like%20to%20order%20The%20Jingle%20of%20the%20Sugar%20Mas%20Bells." class="btn btn-outline" target="_blank" rel="noopener">Order via WhatsApp</a>
+          </div>
+          <div class="product-note">Ages 5–10 · ⭐⭐⭐⭐⭐ Perfect for Christmas gift baskets and classroom read-alouds.</div>
+        </article>
+
+        <!-- PRODUCT 5: My Kindergarten Handbook -->
+        <article class="product-card">
+          <div class="product-cover">
+            <a href="https://www.amazon.com/My-Kindergarten-Handbook-Little-Kinder/dp/B0F4M2QL24" target="_blank" rel="noopener">
+              <img src="https://images-na.ssl-images-amazon.com/images/P/B0F4M2QL24.01.LZZZZZZZ.jpg"
+                   onerror="this.onerror=null;this.parentElement.innerHTML='<span style=padding:1rem;font-weight:700>My Kindergarten Handbook</span>';"
+                   alt="My Kindergarten Handbook book cover"
+                   loading="lazy" />
+            </a>
+          </div>
+          <div class="product-title">My Kindergarten Handbook: Little Kinder Kids</div>
+          <div class="product-meta">A friendly guide for young adventurers starting kindergarten — handwriting, counting, and confidence-building with a Caribbean touch.</div>
+          <div class="product-price">From $10.00 paperback · $4.99 Kindle</div>
+          <div class="product-actions">
+            <a href="https://www.amazon.com/My-Kindergarten-Handbook-Little-Kinder/dp/B0F4M2QL24" class="btn btn-primary" target="_blank" rel="noopener">Buy on Amazon</a>
+            <a href="https://wa.me/18696639220?text=Hi%20Caribbean%20Scribbles%2C%20I%27d%20like%20to%20order%20My%20Kindergarten%20Handbook." class="btn btn-outline" target="_blank" rel="noopener">Order via WhatsApp</a>
+          </div>
+          <div class="product-note">Ages 4–6 · ⭐⭐⭐⭐⭐ Ideal for school readiness and early primary classrooms.</div>
+        </article>
+
+        <!-- PRODUCT 6: Saint Kitts Pride Exercise Book -->
+        <article class="product-card">
+          <div class="product-cover">
+            <a href="https://www.amazon.com/Saint-Kitts-Pride-Exercise-Book/dp/B0FL15G3KL" target="_blank" rel="noopener">
+              <img src="https://images-na.ssl-images-amazon.com/images/P/B0FL15G3KL.01.LZZZZZZZ.jpg"
+                   onerror="this.onerror=null;this.parentElement.innerHTML='<span style=padding:1rem;font-weight:700>Saint Kitts Pride Exercise Book</span>';"
+                   alt="Saint Kitts Pride Exercise Book cover"
+                   loading="lazy" />
+            </a>
+          </div>
+          <div class="product-title">Saint Kitts Pride: Exercise Book</div>
+          <div class="product-meta">Island-themed lined exercise book — turns everyday writing practice into a quiet celebration of home and heritage.</div>
+          <div class="product-price">From $6.08 paperback · $13.00 hardcover</div>
+          <div class="product-actions">
+            <a href="https://www.amazon.com/Saint-Kitts-Pride-Exercise-Book/dp/B0FL15G3KL" class="btn btn-primary" target="_blank" rel="noopener">Buy on Amazon</a>
+            <a href="https://wa.me/18696639220?text=Hi%20Caribbean%20Scribbles%2C%20I%27d%20like%20to%20order%20Saint%20Kitts%20Pride%20Exercise%20Book." class="btn btn-outline" target="_blank" rel="noopener">Order via WhatsApp</a>
+          </div>
+          <div class="product-note">All ages · ⭐⭐⭐⭐⭐ Great for schools, bookstores, and diaspora gift shops.</div>
+        </article>
+
+        <!-- PRODUCT 7: The Girls of My Sketchbook -->
+        <article class="product-card">
+          <div class="product-cover">
+            <a href="https://www.amazon.com/Girls-Sketchbook-Hairstyles-Habitats-Hobbies/dp/B0H1JGR67Q" target="_blank" rel="noopener">
+              <img src="https://images-na.ssl-images-amazon.com/images/P/B0H1HM6D8G.01.LZZZZZZZ.jpg"
+                   onerror="this.onerror=null;this.parentElement.innerHTML='<span style=padding:1rem;font-weight:700>The Girls of My Sketchbook</span>';"
+                   alt="The Girls of My Sketchbook coloring book cover"
+                   loading="lazy" />
+            </a>
+          </div>
+          <div class="product-title">The Girls of My Sketchbook: Hairstyles, Habitats &amp; Hobbies</div>
+          <div class="product-meta">24 coloring pages featuring diverse girls with natural hairstyles, hobbies, and habitats — celebrate creativity and representation.</div>
+          <div class="product-price">From $6.99 paperback</div>
+          <div class="product-actions">
+            <a href="https://www.amazon.com/Girls-My-Sketchbook-Hairstyles-Habitats/dp/B0H1HM6D8G" class="btn btn-primary" target="_blank" rel="noopener">Buy on Amazon</a>
+            <a href="https://wa.me/18696639220?text=Hi%20Caribbean%20Scribbles%2C%20I%27d%20like%20to%20order%20The%20Girls%20of%20My%20Sketchbook." class="btn btn-outline" target="_blank" rel="noopener">Order via WhatsApp</a>
+          </div>
+          <div class="product-note">All ages · By Akejah S. Rey · Perfect for young artists and creative minds.</div>
+        </article>
   
 
   <!-- BOOKS -->
@@ -1343,52 +1404,133 @@
       </div>
 
       <div class="books-grid">
+
+        <!-- BOOK 1: Island Lab -->
         <article class="book-card">
           <div class="book-cover">
-            My Kindergarten Handbook
+            <a href="https://www.amazon.com/Island-Lab-Caribbean-Experiments-Explorers/dp/B0GY155LQ2" target="_blank" rel="noopener">
+              <img src="https://images-na.ssl-images-amazon.com/images/P/B0GY155LQ2.01.LZZZZZZZ.jpg"
+                   onerror="this.onerror=null;this.parentElement.innerHTML='<span style=padding:1rem;font-weight:700>Island Lab</span>';"
+                   alt="Island Lab book cover" loading="lazy" />
+            </a>
           </div>
-          <div class="book-meta-top">Early learner workbook</div>
-          <div class="book-title-main">My Kindergarten Handbook</div>
-          <div class="book-sub">
-            An activity-filled companion for little learners starting school, with handwriting, numbers, and confidence-boosting tasks.
-          </div>
+          <div class="book-meta-top">STEM · Science</div>
+          <div class="book-title-main">Island Lab: 15 Caribbean Science Experiments</div>
+          <div class="book-sub">Turn the whole island into your laboratory! 15 step-by-step experiments using local Caribbean materials.</div>
           <div class="book-footer">
-            <span class="book-tagline">Ages 4–6</span>
-            <a class="book-link" href="https://www.amazon.com/My-Kindergarten-Handbook-Little-Kinder/dp/B0F4M2QL24/ref=tmm_pap_swatch_0?_encoding=UTF8&dib_tag=se&dib=eyJ2IjoiMSJ9.rdBgAosjucW7qWnsuzb9PODi2duGdiCImRWSVrgFYdblcay1hGPT75zAQ0OKaKM4ndqc3oh7gQxkZ1yl2osSBRVPhlbHy47NhYNFgPQHJBrJUPXeTijhEVQZch8NuS_OQJ48FesTdywHmX5pUzkAm005vyAFRKDyDG0raFoXdNgzVVQRSgiFH9YPbEyw0Jp2c2ARHlSS94yXZ4ZkMhWgX4Zggs2mJuzSPjWmPhAKG9Q.wPKvT4OCqAqmotOwwnSM9P9S4dNvvdnXnwgpUR-dgvM&qid=1763045166&sr=8-1" target="_blank" rel="noopener">View on Amazon</a>
+            <span class="book-tagline">Ages 6–12</span>
+            <a class="book-link" href="https://www.amazon.com/Island-Lab-Caribbean-Experiments-Explorers/dp/B0GY155LQ2" target="_blank" rel="noopener">View on Amazon →</a>
           </div>
         </article>
 
+        <!-- BOOK 2: Akejah and the Rules of Harmony Island -->
         <article class="book-card">
           <div class="book-cover">
-            The Jingle of the Sugar Mas Bells
+            <a href="https://www.amazon.com/Akejah-Rules-Harmony-island-Caribbean/dp/B0G3F2GTFM" target="_blank" rel="noopener">
+              <img src="https://images-na.ssl-images-amazon.com/images/P/B0G3F2GTFM.01.LZZZZZZZ.jpg"
+                   onerror="this.onerror=null;this.parentElement.innerHTML='<span style=padding:1rem;font-weight:700>Akejah &amp; Harmony Island</span>';"
+                   alt="Akejah and the Rules of Harmony Island book cover" loading="lazy" />
+            </a>
           </div>
-          <div class="book-meta-top">Holiday story</div>
-          <div class="book-title-main">The Jingle of the Sugar Mas Bells</div>
-          <div class="book-sub">
-            A Saint Kitts Christmas tale filled with carnival colour, street parades, and the rhythm of Sugar Mas bells.
-          </div>
+          <div class="book-meta-top">Caribbean story · Values</div>
+          <div class="book-title-main">Akejah and the Rules of Harmony Island</div>
+          <div class="book-sub">A Caribbean story about kindness, courage, and the power of rules on a magical island.</div>
           <div class="book-footer">
             <span class="book-tagline">Ages 6–10</span>
-            <a class="book-link" href="#" target="_blank" rel="noopener">View on Amazon</a>
+            <a class="book-link" href="https://www.amazon.com/Akejah-Rules-Harmony-island-Caribbean/dp/B0G3F2GTFM" target="_blank" rel="noopener">View on Amazon →</a>
           </div>
         </article>
 
+        <!-- BOOK 3: Sweets, Treats, Toys & Me! -->
         <article class="book-card">
           <div class="book-cover">
-            Saint Kitts Pride Exercise Book
+            <a href="https://www.amazon.com/Sweets-Treats-Toys-Entrepreneurial-Adventure/dp/B0GXRNHRHS" target="_blank" rel="noopener">
+              <img src="https://images-na.ssl-images-amazon.com/images/P/B0GXRNHRHS.01.LZZZZZZZ.jpg"
+                   onerror="this.onerror=null;this.parentElement.innerHTML='<span style=padding:1rem;font-weight:700>Sweets, Treats, Toys &amp; Me!</span>';"
+                   alt="Sweets Treats Toys and Me book cover" loading="lazy" />
+            </a>
           </div>
-          <div class="book-meta-top">School & practice</div>
-          <div class="book-title-main">Saint Kitts Pride Exercise Book</div>
-          <div class="book-sub">
-            A lined, island-themed exercise book that turns everyday writing practice into a quiet celebration of home.
-          </div>
+          <div class="book-meta-top">Adventure · Entrepreneurship</div>
+          <div class="book-title-main">Sweets, Treats, Toys &amp; Me!</div>
+          <div class="book-sub">An 8-year-old entrepreneurial adventure capturing the pure joy of childhood and island spirit.</div>
           <div class="book-footer">
-            <span class="book-tagline">All ages</span>
-            <a class="book-link" href="https://www.amazon.com/Saint-Kitts-Pride-Exercise-Book/dp/B0FL15G3KL/ref=sr_1_1?crid=39D67PNF148AW&dib=eyJ2IjoiMSJ9.4yriTf9_mOEgDh9iKCHGdg.eYLOlSThv8ZE6TEvfIor1bChL5zIJowhfof0RaKn0S4&dib_tag=se&keywords=saint+kitts+pride+exercise+book&qid=1763045292&sprefix=saint+kitts+pride%2Caps%2C165&sr=8-1" target="_blank" rel="noopener">View on Amazon</a>
+            <span class="book-tagline">Ages 5–10</span>
+            <a class="book-link" href="https://www.amazon.com/Sweets-Treats-Toys-Entrepreneurial-Adventure/dp/B0GXRNHRHS" target="_blank" rel="noopener">View on Amazon →</a>
           </div>
         </article>
 
-        <!-- Add more book cards as you publish new titles -->
+        <!-- BOOK 4: The Jingle of the Sugar Mas Bells -->
+        <article class="book-card">
+          <div class="book-cover">
+            <a href="https://www.amazon.com/Jingle-Sugar-Mas-Bells/dp/B0G473HPSN" target="_blank" rel="noopener">
+              <img src="https://images-na.ssl-images-amazon.com/images/P/B0G473HPSN.01.LZZZZZZZ.jpg"
+                   onerror="this.onerror=null;this.parentElement.innerHTML='<span style=padding:1rem;font-weight:700>The Jingle of the Sugar Mas Bells</span>';"
+                   alt="The Jingle of the Sugar Mas Bells book cover" loading="lazy" />
+            </a>
+          </div>
+          <div class="book-meta-top">Holiday · Christmas</div>
+          <div class="book-title-main">The Jingle of the Sugar Mas Bells</div>
+          <div class="book-sub">A Saint Kitts Christmas tale filled with carnival colour, street parades, and the rhythm of Sugar Mas bells.</div>
+          <div class="book-footer">
+            <span class="book-tagline">Ages 5–10</span>
+            <a class="book-link" href="https://www.amazon.com/Jingle-Sugar-Mas-Bells/dp/B0G473HPSN" target="_blank" rel="noopener">View on Amazon →</a>
+          </div>
+        </article>
+
+        <!-- BOOK 5: My Kindergarten Handbook -->
+        <article class="book-card">
+          <div class="book-cover">
+            <a href="https://www.amazon.com/My-Kindergarten-Handbook-Little-Kinder/dp/B0F4M2QL24" target="_blank" rel="noopener">
+              <img src="https://images-na.ssl-images-amazon.com/images/P/B0F4M2QL24.01.LZZZZZZZ.jpg"
+                   onerror="this.onerror=null;this.parentElement.innerHTML='<span style=padding:1rem;font-weight:700>My Kindergarten Handbook</span>';"
+                   alt="My Kindergarten Handbook book cover" loading="lazy" />
+            </a>
+          </div>
+          <div class="book-meta-top">Early learner · Activity book</div>
+          <div class="book-title-main">My Kindergarten Handbook: Little Kinder Kids</div>
+          <div class="book-sub">A friendly guide for young adventurers starting kindergarten — handwriting, numbers, and confidence-building.</div>
+          <div class="book-footer">
+            <span class="book-tagline">Ages 4–6</span>
+            <a class="book-link" href="https://www.amazon.com/My-Kindergarten-Handbook-Little-Kinder/dp/B0F4M2QL24" target="_blank" rel="noopener">View on Amazon →</a>
+          </div>
+        </article>
+
+        <!-- BOOK 6: Saint Kitts Pride Exercise Book -->
+        <article class="book-card">
+          <div class="book-cover">
+            <a href="https://www.amazon.com/Saint-Kitts-Pride-Exercise-Book/dp/B0FL15G3KL" target="_blank" rel="noopener">
+              <img src="https://images-na.ssl-images-amazon.com/images/P/B0FL15G3KL.01.LZZZZZZZ.jpg"
+                   onerror="this.onerror=null;this.parentElement.innerHTML='<span style=padding:1rem;font-weight:700>Saint Kitts Pride Exercise Book</span>';"
+                   alt="Saint Kitts Pride Exercise Book cover" loading="lazy" />
+            </a>
+          </div>
+          <div class="book-meta-top">School &amp; practice · Island pride</div>
+          <div class="book-title-main">Saint Kitts Pride: Exercise Book</div>
+          <div class="book-sub">A lined, island-themed exercise book that turns everyday writing practice into a quiet celebration of home.</div>
+          <div class="book-footer">
+            <span class="book-tagline">All ages</span>
+            <a class="book-link" href="https://www.amazon.com/Saint-Kitts-Pride-Exercise-Book/dp/B0FL15G3KL" target="_blank" rel="noopener">View on Amazon →</a>
+          </div>
+        </article>
+
+        <!-- BOOK 7: The Girls of My Sketchbook -->
+        <article class="book-card">
+          <div class="book-cover">
+            <a href="https://www.amazon.com/Girls-My-Sketchbook-Hairstyles-Habitats/dp/B0H1HM6D8G" target="_blank" rel="noopener">
+              <img src="https://images-na.ssl-images-amazon.com/images/P/B0H1HM6D8G.01.LZZZZZZZ.jpg"
+                   onerror="this.onerror=null;this.parentElement.innerHTML='<span style=padding:1rem;font-weight:700>The Girls of My Sketchbook</span>';"
+                   alt="The Girls of My Sketchbook coloring book cover" loading="lazy" />
+            </a>
+          </div>
+          <div class="book-meta-top">Coloring book · Creativity</div>
+          <div class="book-title-main">The Girls of My Sketchbook: Hairstyles, Habitats &amp; Hobbies</div>
+          <div class="book-sub">24 coloring pages featuring diverse girls with natural hairstyles, hobbies, and habitats — by Akejah S. Rey.</div>
+          <div class="book-footer">
+            <span class="book-tagline">All ages</span>
+            <a class="book-link" href="https://www.amazon.com/Girls-My-Sketchbook-Hairstyles-Habitats/dp/B0H1HM6D8G" target="_blank" rel="noopener">View on Amazon →</a>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
