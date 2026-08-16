@@ -36,6 +36,7 @@
       color: var(--text);
       background: var(--bg);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     img {
@@ -861,6 +862,30 @@
       font-size: 0.88rem;
     }
 
+    /* NEWSLETTER / CONTACT LAYOUT */
+    #newsletter .container {
+      max-width: 920px;
+    }
+
+    #newsletter .testimonials {
+      grid-template-columns: minmax(0, 1fr);
+      max-width: 760px;
+      margin: 1.5rem auto 0;
+    }
+
+    #contact .contact-grid {
+      align-items: start;
+    }
+
+    #contact-form,
+    .contact-meta {
+      min-width: 0;
+    }
+
+    .contact-meta {
+      overflow-wrap: anywhere;
+    }
+
     /* CONTACT */
     .contact-grid {
       display: grid;
@@ -997,7 +1022,7 @@
       }
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 900px) {
       .nav-links {
         position: absolute;
         top: 100%;
@@ -1757,7 +1782,10 @@
           </div>
           <div class="product-note">All ages · By Akejah S. Rey · Perfect for young artists and creative minds.</div>
         </article>
-  
+
+      </div>
+    </div>
+  </section>
 
   <!-- BOOKS -->
   <section id="books">
