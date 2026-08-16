@@ -22,6 +22,20 @@ Caribbean Scribbles Publishing is a small, Caribbean-rooted press and digital sp
 
 This site is a simple, static front page built with **HTML, CSS and a little JavaScript**.
 
+## Homepage chatbot
+
+The main homepage includes **Island Guide**, a lightweight publishing-assistance chatbot. It helps visitors with:
+
+- Publishing services, manuscript coaching, editing, layout, and KDP/IngramSpark setup
+- School, NGO, church, workshop, author-talk, and community-project enquiries
+- Book recommendations by age and interest
+- Amazon and WhatsApp ordering guidance
+- Newsletter, contact, location, rights, and project-request routing
+
+The chatbot is intentionally client-side and does not send or store chat messages. Its answers are curated in `chatbot.js`, so no API key is exposed in the public GitHub Pages site. Project-specific requests, quotes, manuscript reviews, and rights questions are routed to the existing contact form or `caribbeanscribbles@gmail.com`.
+
+To update chatbot wording or supported questions, edit `chatbot.js`. The launcher and dialog markup and styling are in `index.html`.
+
 ---
 
 ## How to update the website
