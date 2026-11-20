@@ -4,11 +4,37 @@ This repository contains the code for the **Caribbean Scribbles Publishing** web
 
 ## Live site
 
-Once GitHub Pages is enabled for this repository, the site will be available at:
+The site is live at:
 
 **https://vjoycelyn.github.io/caribbean-scribbles-publishing-site-/**
 
-> If you set a custom domain later (for example: `https://caribbeanscribbles.com`), you can update it here.
+### Restoring the custom domain
+
+`caribbeanscribblespublishing.com` expired on 16 November 2026. Namecheap replaced its DNS
+records with a parking page. The domain was renewed the next day (valid until 16 November 2027),
+but the DNS zone was never restored, so the domain stopped loading the site over both HTTP and
+HTTPS.
+
+The site was therefore moved to the free `github.io` address above, and the `CNAME` file was
+removed. To switch back to the custom domain once DNS is repaired:
+
+1. In Namecheap → **Domain List** → `caribbeanscribblespublishing.com` → **Advanced DNS**,
+   delete the parking records and add:
+
+   | Type  | Host | Value             |
+   | ----- | ---- | ----------------- |
+   | A     | @    | 185.199.108.153   |
+   | A     | @    | 185.199.109.153   |
+   | A     | @    | 185.199.110.153   |
+   | A     | @    | 185.199.111.153   |
+   | CNAME | www  | vjoycelyn.github.io |
+
+2. In GitHub → **Settings** → **Pages**, set the custom domain to
+   `caribbeanscribblespublishing.com` and enable **Enforce HTTPS**.
+3. Re-create a `CNAME` file in this repository containing only
+   `caribbeanscribblespublishing.com`.
+4. Point the newsletter form's `_next` field in `index.html` and the `Website` links in
+   `scripts/email_templates.py` back at the custom domain.
 
 ---
 
