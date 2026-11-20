@@ -4,37 +4,11 @@ This repository contains the code for the **Caribbean Scribbles Publishing** web
 
 ## Live site
 
-The site is served by GitHub Pages at the custom domain:
+Once GitHub Pages is enabled for this repository, the site will be available at:
 
-**https://caribbeanscribblespublishing.com/**
+**https://vjoycelyn.github.io/caribbean-scribbles-publishing-site-/**
 
-The `CNAME` file in this repository pins that domain. While a custom domain is set, the
-`vjoycelyn.github.io` address redirects to it rather than serving the site directly.
-
-### DNS records
-
-The domain is registered with **Namecheap** (renewed through 16 November 2027). If the site ever
-shows a Namecheap parking page instead of the website, the DNS zone has been reset and these
-records need to be restored under **Domain List** → **Advanced DNS**:
-
-| Type  | Host | Value               |
-| ----- | ---- | ------------------- |
-| A     | @    | 185.199.108.153     |
-| A     | @    | 185.199.109.153     |
-| A     | @    | 185.199.110.153     |
-| A     | @    | 185.199.111.153     |
-| CNAME | www  | vjoycelyn.github.io |
-
-Delete any parking `A` records pointing at `104.219.250.37` or `203.161.32.252` first. In
-GitHub → **Settings** → **Pages**, confirm the custom domain and keep **Enforce HTTPS** enabled.
-GitHub re-issues the TLS certificate automatically once the domain resolves to its servers.
-
-### Temporary fallback
-
-If the domain needs to be taken out of service, deleting the `CNAME` file makes GitHub Pages
-serve the site at `https://vjoycelyn.github.io/caribbean-scribbles-publishing-site-/`. Also
-update the newsletter form's `_next` field in `index.html` and the `Website` links in
-`scripts/email_templates.py` so they don't point at the unavailable domain.
+> If you set a custom domain later (for example: `https://caribbeanscribbles.com`), you can update it here.
 
 ---
 
