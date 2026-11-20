@@ -4,11 +4,34 @@ This repository contains the code for the **Caribbean Scribbles Publishing** web
 
 ## Live site
 
-Once GitHub Pages is enabled for this repository, the site will be available at:
+GitHub Pages is enabled and the site is live at the custom domain:
 
-**https://vjoycelyn.github.io/caribbean-scribbles-publishing-site-/**
+**https://caribbeanscribblespublishing.com/**
 
-> If you set a custom domain later (for example: `https://caribbeanscribbles.com`), you can update it here.
+The `CNAME` file in this repository pins that domain, so the
+`vjoycelyn.github.io` address redirects to it rather than serving the site separately.
+
+### Domain and DNS
+
+The domain is registered with **Namecheap** and runs until **16 November 2027**.
+Keep **Auto-Renew switched on** — the site went offline on 16 November 2026 when the
+domain lapsed unrenewed.
+
+DNS is hosted on **Namecheap PremiumDNS** (`pdns1` / `pdns2.registrar-servers.com`).
+If the site ever shows a Namecheap parking page instead of the website, the zone has been
+reset and these records need restoring under **Domain List → Advanced DNS**:
+
+| Type  | Host | Value               |
+| ----- | ---- | ------------------- |
+| A     | @    | 185.199.108.153     |
+| A     | @    | 185.199.109.153     |
+| A     | @    | 185.199.110.153     |
+| A     | @    | 185.199.111.153     |
+| CNAME | www  | vjoycelyn.github.io |
+
+Do not change the nameserver selection away from Namecheap PremiumDNS; switching DNS
+type rebuilds the zone and clears these records. In GitHub, keep the custom domain set
+under **Settings → Pages** with **Enforce HTTPS** enabled.
 
 ---
 
