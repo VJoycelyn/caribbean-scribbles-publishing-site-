@@ -167,7 +167,7 @@ def generate_html_email(featured_books=None, news_item=None, recipient_name=''):
               <p style="font-size:13px; color:#6b7280; margin:0 0 6px 0;"><strong>Caribbean Scribbles Publishing</strong></p>
               <p style="font-size:12px; color:#9ca3af; margin:0 0 6px 0;">Based in Saint Kitts &amp; Nevis, Caribbean</p>
               <p style="font-size:12px; color:#9ca3af; margin:0 0 10px 0;">
-                <a href="https://vjoycelyn.github.io/caribbean-scribbles-publishing-site-/" style="color:#007b83;">Website</a>
+                <a href="https://caribbeanscribblespublishing.com" style="color:#007b83;">Website</a>
                 &nbsp;|&nbsp;
                 <a href="https://www.amazon.com/author/vjsmithen" style="color:#007b83;">Amazon Author Page</a>
                 &nbsp;|&nbsp;
@@ -220,6 +220,6 @@ def generate_text_email(featured_books=None, news_item=None, recipient_name=''):
     text += "Browse all books: https://www.amazon.com/author/vjsmithen\n\n"
     text += "Caribbean Scribbles Publishing\n"
     text += "Based in Saint Kitts & Nevis, Caribbean\n"
-    text += "Website: https://vjoycelyn.github.io/caribbean-scribbles-publishing-site-/\n"
+    text += "Website: https://caribbeanscribblespublishing.com\n"
 
     return text
