@@ -4,37 +4,37 @@ This repository contains the code for the **Caribbean Scribbles Publishing** web
 
 ## Live site
 
-The site is served by GitHub Pages at the custom domain:
+The site is live at:
 
-**https://caribbeanscribblespublishing.com/**
+**https://vjoycelyn.github.io/caribbean-scribbles-publishing-site-/**
 
-The `CNAME` file in this repository pins that domain. While a custom domain is set, the
-`vjoycelyn.github.io` address redirects to it rather than serving the site directly.
+### Restoring the custom domain
 
-### DNS records
+`caribbeanscribblespublishing.com` expired on 16 November 2026. Namecheap replaced its DNS
+records with a parking page. The domain was renewed the next day (valid until 16 November 2027),
+but the DNS zone was never restored, so the domain stopped loading the site over both HTTP and
+HTTPS.
 
-The domain is registered with **Namecheap** (renewed through 16 November 2027). If the site ever
-shows a Namecheap parking page instead of the website, the DNS zone has been reset and these
-records need to be restored under **Domain List** → **Advanced DNS**:
+The site was therefore moved to the free `github.io` address above, and the `CNAME` file was
+removed. To switch back to the custom domain once DNS is repaired:
 
-| Type  | Host | Value               |
-| ----- | ---- | ------------------- |
-| A     | @    | 185.199.108.153     |
-| A     | @    | 185.199.109.153     |
-| A     | @    | 185.199.110.153     |
-| A     | @    | 185.199.111.153     |
-| CNAME | www  | vjoycelyn.github.io |
+1. In Namecheap → **Domain List** → `caribbeanscribblespublishing.com` → **Advanced DNS**,
+   delete the parking records and add:
 
-Delete any parking `A` records pointing at `104.219.250.37` or `203.161.32.252` first. In
-GitHub → **Settings** → **Pages**, confirm the custom domain and keep **Enforce HTTPS** enabled.
-GitHub re-issues the TLS certificate automatically once the domain resolves to its servers.
+   | Type  | Host | Value             |
+   | ----- | ---- | ----------------- |
+   | A     | @    | 185.199.108.153   |
+   | A     | @    | 185.199.109.153   |
+   | A     | @    | 185.199.110.153   |
+   | A     | @    | 185.199.111.153   |
+   | CNAME | www  | vjoycelyn.github.io |
 
-### Temporary fallback
-
-If the domain needs to be taken out of service, deleting the `CNAME` file makes GitHub Pages
-serve the site at `https://vjoycelyn.github.io/caribbean-scribbles-publishing-site-/`. Also
-update the newsletter form's `_next` field in `index.html` and the `Website` links in
-`scripts/email_templates.py` so they don't point at the unavailable domain.
+2. In GitHub → **Settings** → **Pages**, set the custom domain to
+   `caribbeanscribblespublishing.com` and enable **Enforce HTTPS**.
+3. Re-create a `CNAME` file in this repository containing only
+   `caribbeanscribblespublishing.com`.
+4. Point the newsletter form's `_next` field in `index.html` and the `Website` links in
+   `scripts/email_templates.py` back at the custom domain.
 
 ---
 
